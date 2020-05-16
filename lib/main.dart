@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:online_courses/details_screen.dart';
 import 'package:online_courses/model/category.dart';
 import './constants.dart';
 
@@ -61,10 +62,17 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   width: 16,
                 ),
-                Text(
-                  "Search for anything",
-                  style: TextStyle(fontSize: 18, color: Color(0xFFA0A5BD)),
-                )
+                new GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DetailsScreen();
+                      }));
+                    },
+                    child: new Text(
+                      "Search for anything",
+                      style: TextStyle(fontSize: 18, color: Color(0xFFA0A5BD)),
+                    ))
               ],
             ),
           ),
